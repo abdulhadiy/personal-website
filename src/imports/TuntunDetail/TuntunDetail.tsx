@@ -131,14 +131,14 @@ function CoverSection() {
       <div className="aspect-[3100/2040] bg-white overflow-hidden relative w-full">
         <img alt="tuntun onboarding cover visual" className="absolute inset-0 object-cover object-center pointer-events-none size-full" src={imgCover} />
       </div>
-      <div className="content-stretch flex gap-[70px] items-center p-[28px] relative w-full">
-        <div className="basis-[210px] grow-0 shrink-0">
-          <p className="font-['Outfit:Regular',sans-serif] font-semibold leading-[26px] text-[#6e6f73] text-[28px]">Tuntun</p>
-          <p className="font-['Outfit:Regular',sans-serif] font-normal leading-[18px] text-[#6e6f73] text-[18px]">Sekuritas Indonesia</p>
+      <div className="aspect-[1552/204] bg-white relative w-full">
+        <div className="absolute left-[6.9%] top-1/2 -translate-y-1/2">
+          <p className="font-['Outfit:Regular',sans-serif] font-bold leading-[0.86] text-[#6e6f73] text-[18px]">Tuntun</p>
+          <p className="font-['Outfit:Regular',sans-serif] font-semibold leading-[1] text-[#6e6f73] text-[8px]">Sekuritas Indonesia</p>
         </div>
-        <div className="content-stretch flex flex-col gap-[10px] items-start min-w-0">
-          <p className="font-['Outfit:Regular',sans-serif] font-normal leading-[normal] lowercase text-[16px] text-black">good spirit from the east</p>
-          <p className="font-['Outfit:Regular',sans-serif] font-normal leading-[28px] lowercase text-[#6e6f73] text-[22px]">
+        <div className="absolute left-[23.2%] right-[7.2%] top-[23.5%]">
+          <p className="font-['Outfit:Regular',sans-serif] font-normal leading-[1] lowercase text-[15px] text-black">good spirit from the east</p>
+          <p className="font-['Outfit:Regular',sans-serif] font-normal leading-[1.35] lowercase mt-[13px] text-[#6e6f73] text-[15px]">
             launched a guided investment experience for novice users by simplifying the complex investment journey
           </p>
         </div>
