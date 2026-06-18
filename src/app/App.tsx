@@ -780,6 +780,8 @@ export default function App() {
     if (showDetailPage) return;
     if (!containerRef.current) return;
 
+    const bibitStockMailto = "mailto:abdulhadiy8@gmail.com?subject=Hi%20Abdul&body=Halo%20saya%20ingin%20tanya%20tentang%20project%20bibit%2B";
+
     const projectTexts = [
       "view summary",      // Bibit - Revamp Transaction Page
       "view summary",      // Tuntun - Good Spirit from the East
@@ -820,7 +822,7 @@ export default function App() {
           playClickSound();
           setIsCursorVisible(false);
           document.body.style.cursor = "auto";
-          window.location.href = "mailto:abdulhadiy8@gmail.com";
+          window.location.href = bibitStockMailto;
         } else if (index === 3) {
           playClickSound();
           setIsCursorVisible(false);

@@ -28,6 +28,8 @@ import imgLogoEmiten1 from "figma:asset/0897eb7cb0e614ad3b4fa490b98488e13ba304c5
 import imgScreenshot20260305At905043 from "figma:asset/7b872ff2c435495300035d55db7369c581870026.png";
 import imgIphone17ProMaxMockup17725952114972 from "figma:asset/1b5c8f8a32b48dfa0f1bc0089b0e0478ca1e3539.png";
 import imgBibit5 from "figma:asset/cfe4620fe8ecc3f59644c0d3a7e6ba2fa6d7ead2.png";
+
+const connectMailto = "mailto:abdulhadiy8@gmail.com?subject=Hi%20Abdul&body=Halo%20Abdul%2C%0A%0ASaya%20ingin%20tanya%2C%20apakah%20ada%20kemungkinan%20untuk%20bekerja%20sama%3F%0A%0ASaya%20tertarik%20untuk%20ngobrol%20lebih%20lanjut%20kalau%20memang%20ada%20peluang%20kolaborasi.%0A%0ATerima%20kasih%20sebelumnya%2C%20ditunggu%20kabarnya%20ya.%0A%0ASalam%2C%0A%5BNama%20Anda%5D";
 import imgImage11 from "figma:asset/e316a02a9d243f87b7a0259a5f409b273a6c5b07.png";
 import imgImage12 from "figma:asset/c98b7cf078c12a150b90710e2a716c7cfd325057.png";
 import imgImage3 from "figma:asset/684bd852a3d922676113508ab49903ccd4c61f99.png";
@@ -2563,7 +2565,7 @@ export default function PersonalWebsite({ className }: { className?: string }) {
                     </p>
                   </div>
                 </div>
-                <button className="group cursor-pointer relative shrink-0 active:translate-y-[1px] transition-transform duration-75" data-name="cta" data-cta-button onClick={() => window.open('mailto:abdulhadiy8@gmail.com')}>
+                <button className="group cursor-pointer relative shrink-0 active:translate-y-[1px] transition-transform duration-75" data-name="cta" data-cta-button onClick={() => window.open(connectMailto)}>
                   <div className="bg-black rounded-[2px] p-[2px]">
                     <div className="relative bg-[#ff6700] rounded-[4px] px-[20px] py-[4px] shadow-[4px_4px_4px_0px_rgba(0,0,0,0.2)]">
                       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_-4px_-4px_2px_0px_rgba(255,255,255,0.1),inset_4px_4px_2px_0px_rgba(255,255,255,0.2)]" />
