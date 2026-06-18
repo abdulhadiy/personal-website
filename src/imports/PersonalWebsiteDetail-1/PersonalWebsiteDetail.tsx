@@ -13,6 +13,7 @@ import imgProcessInterviewHeader from "./detail-assets/process-headers/interview
 import imgProcessInsightHeader from "./detail-assets/process-headers/insight.png";
 import imgProcessTrackerHeader from "./detail-assets/process-headers/tracker.png";
 import imgProblemFlowCrop from "./detail-crops/problem-flow.png";
+import imgProblemFlowMobile from "./detail-crops/problem-flow-mobile.png";
 import imgSolutionCta from "./detail-assets/solution-cta.png";
 import imgSolutionIdentifier from "./detail-assets/solution-identifier.png";
 import imgSolutionImprove from "./detail-assets/solution-improve.png";
@@ -96,7 +97,7 @@ function Frame16() {
 
 function Frame3({ onBack }: PersonalWebsiteDetailProps) {
   return (
-    <div className="h-full shrink-0 sticky top-0 w-[245px]">
+    <div className="h-full shrink-0 sticky top-0 w-[245px] max-lg:hidden">
       <div className="flex flex-col size-full">
         <div className="content-stretch flex flex-col items-start p-[20px] relative size-full">
           <Sheet onBack={onBack} />
@@ -488,11 +489,25 @@ function DetailBibitLogo() {
 function DetailCaption({ title, description }: { title: string; description: string }) {
   return (
     <div className="bg-white relative shrink-0 w-full">
-      <div className="content-stretch flex gap-[20px] items-center p-[20px] relative w-full">
+      <div className="content-stretch flex flex-col gap-[14px] items-start p-[16px] relative w-full sm:flex-row sm:items-center sm:gap-[20px] sm:p-[20px]">
         <DetailBibitLogo />
         <div className="content-stretch flex flex-1 flex-col font-['Outfit:Regular',sans-serif] font-normal gap-[8px] items-start lowercase min-w-0 relative text-[14px]">
-          <p className="relative shrink-0 text-black whitespace-nowrap">{title}</p>
+          <p className="relative shrink-0 text-black">{title}</p>
           <p className="leading-[19px] relative shrink-0 text-[#6e6f73] w-full">{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MobileHomeCardCaption() {
+  return (
+    <div className="bg-white relative shrink-0 w-full sm:hidden">
+      <div className="content-stretch flex gap-[20px] items-center p-[20px] relative w-full">
+        <DetailBibitLogo />
+        <div className="content-stretch flex flex-[1_0_0] flex-col font-['Outfit:Regular',sans-serif] font-normal gap-[8px] items-start leading-[normal] lowercase min-h-px min-w-px relative text-[14px]">
+          <p className="relative shrink-0 text-black whitespace-nowrap">revamp transaction page</p>
+          <p className="min-w-full relative shrink-0 text-[#6e6f73] w-[min-content]">Increased transaction completion by improving clarity on the transaction page, addressing a 59% user drop-off</p>
         </div>
       </div>
     </div>
@@ -502,14 +517,17 @@ function DetailCaption({ title, description }: { title: string; description: str
 function CoverSection() {
   return (
     <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[4px] shrink-0 w-full">
-      <div className="bg-white h-[510px] overflow-clip relative shrink-0 w-full">
+      <div className="bg-white h-[360px] overflow-clip relative shrink-0 w-full sm:h-[510px]">
         <GreenCardBackground />
         <DetailPhoneMockup className="-translate-x-1/2 -translate-y-1/2 absolute h-[82%] left-1/2 top-1/2" />
       </div>
-      <DetailCaption
-        title="revamp transaction page"
-        description="increased transaction completion by improving clarity on the transaction page, addressing a 59% user drop-off"
-      />
+      <MobileHomeCardCaption />
+      <div className="hidden sm:block sm:w-full">
+        <DetailCaption
+          title="revamp transaction page"
+          description="increased transaction completion by improving clarity on the transaction page, addressing a 59% user drop-off"
+        />
+      </div>
     </div>
   );
 }
@@ -556,7 +574,7 @@ function DetailImageAsset({ alt, className = "", src }: { alt: string; className
 function ProcessImagePanel({ alt, headerSrc, src }: { alt: string; headerSrc: string; src: string }) {
   return (
     <div className="content-stretch flex flex-col gap-[14px] items-start relative w-full">
-      <img alt="" className="block h-[68px] object-contain object-left pointer-events-none w-full" src={headerSrc} />
+      <img alt="" className="block h-auto max-h-[68px] object-contain object-left pointer-events-none w-full" src={headerSrc} />
       <DetailImageAsset alt={alt} className="aspect-square" src={src} />
     </div>
   );
@@ -674,10 +692,10 @@ function TrackerChart() {
 
 function ProcessSection() {
   return (
-    <div className="bg-white p-[20px] relative rounded-[4px] shrink-0 w-full">
+    <div className="bg-white p-[16px] relative rounded-[4px] shrink-0 w-full sm:p-[20px]">
       <div className="content-stretch flex flex-col gap-[20px] items-start relative w-full">
         <SectionTitle title="process" subtitle="to find the true problems felt by users" />
-        <div className="grid grid-cols-2 gap-[20px] relative w-full">
+        <div className="grid grid-cols-1 gap-[20px] relative w-full sm:grid-cols-2">
           <ProcessImagePanel alt="transaction page design audit visual" headerSrc={imgProcessAuditHeader} src={imgProcessAudit} />
           <ProcessImagePanel alt="in-depth interview with user visual" headerSrc={imgProcessInterviewHeader} src={imgProcessInterview} />
           <ProcessImagePanel alt="gathering insight from customer service visual" headerSrc={imgProcessInsightHeader} src={imgProcessInsight} />
@@ -726,10 +744,11 @@ function FlowArrow({ dashed = false }: { dashed?: boolean }) {
 
 function ProblemSection() {
   return (
-    <div className="bg-white p-[20px] relative rounded-[4px] shrink-0 w-full">
+    <div className="bg-white p-[16px] relative rounded-[4px] shrink-0 w-full sm:p-[20px]">
       <div className="content-stretch flex flex-col gap-[28px] items-start relative w-full">
         <SectionTitle title="problem" subtitle="59% of users drop off during payment on the transaction page" />
-        <DetailImageAsset alt="transaction drop-off flow panel" className="aspect-[2940/1400]" src={imgProblemFlowCrop} />
+        <DetailImageAsset alt="transaction drop-off flow panel" className="aspect-square lg:hidden" src={imgProblemFlowMobile} />
+        <DetailImageAsset alt="transaction drop-off flow panel" className="hidden aspect-[2940/1400] lg:block" src={imgProblemFlowCrop} />
       </div>
     </div>
   );
@@ -790,10 +809,10 @@ function SolutionCard({ index, title, variant }: { index: string; title: string;
 
 function SolutionsSection() {
   return (
-    <div className="bg-white p-[20px] relative rounded-[4px] shrink-0 w-full">
+    <div className="bg-white p-[16px] relative rounded-[4px] shrink-0 w-full sm:p-[20px]">
       <div className="content-stretch flex flex-col gap-[20px] items-start relative w-full">
         <SectionTitle title="solutions" subtitle="key interface decisions" />
-        <div className="grid grid-cols-2 gap-x-[20px] gap-y-[28px] relative w-full">
+        <div className="grid grid-cols-1 gap-x-[20px] gap-y-[28px] relative w-full sm:grid-cols-2">
           <SolutionImageCard alt="prominent cta interface decision visual" index="01" src={imgSolutionCta} title="prominent cta to stimulate user" />
           <SolutionImageCard alt="identifier interface decision visual" index="02" src={imgSolutionIdentifier} title="add identifier to adjust new products" />
           <SolutionImageCard alt="improve not change interface decision visual" index="03" src={imgSolutionImprove} title="improve not change" />
@@ -827,10 +846,10 @@ function ImpactMetric({ icon, title }: { icon: "bag" | "user"; title: string }) 
 
 function ImpactSection() {
   return (
-    <div className="bg-white p-[20px] relative rounded-[4px] shrink-0 w-full">
+    <div className="bg-white p-[16px] relative rounded-[4px] shrink-0 w-full sm:p-[20px]">
       <div className="content-stretch flex flex-col gap-[20px] items-start relative w-full">
         <SectionTitle title="impact" subtitle="improving conversion to directly impact business" />
-        <div className="grid grid-cols-2 gap-[20px] relative w-full">
+        <div className="grid grid-cols-1 gap-[20px] relative w-full sm:grid-cols-2">
           <DetailImageAsset alt="increase transaction done rate impact panel" className="aspect-[1435/1420]" src={imgImpactRate} />
           <DetailImageAsset alt="boosted revenue streams impact panel" className="aspect-[1435/1420]" src={imgImpactRevenue} />
         </div>
@@ -842,13 +861,13 @@ function ImpactSection() {
 function Navbar() {
   return (
     <div className="flex-[1_0_0] min-w-px relative overflow-y-auto overflow-x-hidden h-full" data-name="navbar">
-      <div className="content-stretch flex flex-col gap-[20px] items-start py-[20px] relative rounded-[inherit] w-full">
+      <div className="content-stretch flex flex-col gap-[12px] items-start py-[12px] relative rounded-[inherit] w-full sm:gap-[20px] sm:py-[20px]">
         <CoverSection />
         <ProcessSection />
         <ProblemSection />
         <SolutionsSection />
         <ImpactSection />
-        <div aria-hidden="true" className="absolute border-[#e0e0e0] border-dashed border-l-2 border-r-2 inset-[0_-1px] pointer-events-none" />
+        <div aria-hidden="true" className="absolute border-[#e0e0e0] border-dashed border-l-2 border-r-2 inset-[0_-1px] pointer-events-none max-lg:hidden" />
       </div>
     </div>
   );
@@ -856,15 +875,25 @@ function Navbar() {
 
 function Frame22() {
   return (
-    <div className="content-stretch flex h-full items-start relative shrink-0 w-[775px]">
+    <div className="content-stretch flex flex-1 min-h-0 items-start relative shrink-0 w-full lg:h-full lg:w-[775px]">
       <Navbar />
+    </div>
+  );
+}
+
+function MobileTopBar({ onBack }: PersonalWebsiteDetailProps) {
+  return (
+    <div className="bg-[#fafafa]/95 border-[#e0e0e0] border-b border-dashed flex items-center justify-between px-[16px] py-[14px] sticky top-0 z-20 lg:hidden">
+      <Sheet onBack={onBack} />
+      <p className="font-['Outfit:Regular',sans-serif] font-normal lowercase text-[#6e6f73] text-[13px] whitespace-nowrap">3 min read</p>
     </div>
   );
 }
 
 export default function PersonalWebsiteDetail({ onBack }: PersonalWebsiteDetailProps) {
   return (
-    <div className="bg-[#fafafa] content-stretch flex gap-[20px] items-start justify-center px-[200px] relative size-full" data-name="personal website detail">
+    <div className="bg-[#fafafa] content-stretch flex flex-col gap-0 items-stretch justify-start px-[12px] relative size-full sm:px-[20px] lg:flex-row lg:gap-[20px] lg:items-start lg:justify-center lg:px-[200px]" data-name="personal website detail">
+      <MobileTopBar onBack={onBack} />
       <Frame3 onBack={onBack} />
       <Frame22 />
     </div>

@@ -1,10 +1,13 @@
 import type { ReactNode } from "react";
-import imgCover from "./detail-assets/tuntun-cover.png";
+import svgPaths from "../svg-63icgjjae1";
+import imgTuntunBackground from "figma:asset/6c9ae9b76b82d741dd3cf8cfc1a55fc97735272f.png";
+import imgTuntunPhoneMockup from "figma:asset/58cedbf5c705b51f6ae87b65eacd27661a0f9f14.png";
 import imgImpactAcquisition from "./detail-assets/tuntun-impact-acquisition.png";
 import imgImpactDownload from "./detail-assets/tuntun-impact-download.png";
 import imgImpactDropoff from "./detail-assets/tuntun-impact-dropoff.png";
 import imgImpactTransaction from "./detail-assets/tuntun-impact-transaction.png";
 import imgOpportunityFlow from "./detail-assets/tuntun-opportunity-flow.png";
+import imgOpportunityFlowMobile from "./detail-assets/tuntun-opportunity-flow-mobile.png";
 import imgOutputAi from "./detail-assets/tuntun-output-ai.png";
 import imgOutputExploration from "./detail-assets/tuntun-output-exploration.png";
 import imgOutputRegistration from "./detail-assets/tuntun-output-registration.png";
@@ -77,7 +80,7 @@ function Frame15() {
 
 function Sidebar({ onBack }: TuntunDetailProps) {
   return (
-    <div className="h-full shrink-0 sticky top-0 w-[245px]">
+    <div className="h-full shrink-0 sticky top-0 w-[245px] max-lg:hidden">
       <div className="flex flex-col size-full">
         <div className="content-stretch flex flex-col items-start p-[20px] relative size-full">
           <Sheet onBack={onBack} />
@@ -125,22 +128,76 @@ function AssetImage({ alt, className = "", src }: { alt: string; className?: str
   );
 }
 
+function TuntunLogo() {
+  return (
+    <div className="h-[40px] relative shrink-0 w-[140px]">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[22.624px] left-1/2 top-[calc(50%+0.31px)] w-[72px]">
+        <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 72 22.6242">
+          <g id="Frame 1597882805">
+            <path d={svgPaths.pc6b3580} fill="var(--fill-0, #6E6F73)" id="Vector" />
+            <g id="Group 1312321221">
+              <path d={svgPaths.p3a2d300} fill="var(--fill-0, #6E6F73)" id="Vector_2" />
+              <path d={svgPaths.p2189c480} fill="var(--fill-0, #6E6F73)" id="Vector_3" />
+              <path d={svgPaths.p36d2c780} fill="var(--fill-0, #6E6F73)" id="Vector_4" />
+              <path d={svgPaths.pda1f000} fill="var(--fill-0, #6E6F73)" id="Vector_5" />
+              <path d={svgPaths.p12730600} fill="var(--fill-0, #6E6F73)" id="Vector_6" />
+              <path d={svgPaths.p2a0c5300} fill="var(--fill-0, #6E6F73)" id="Vector_7" />
+              <path d={svgPaths.p3d4ceff0} fill="var(--fill-0, #6E6F73)" id="Vector_8" />
+              <path d={svgPaths.p2378cc00} fill="var(--fill-0, #6E6F73)" id="Vector_9" />
+              <path d={svgPaths.p1d883500} fill="var(--fill-0, #6E6F73)" id="Vector_10" />
+              <path d={svgPaths.p3f696600} fill="var(--fill-0, #6E6F73)" id="Vector_11" />
+              <path d={svgPaths.p111c4c80} fill="var(--fill-0, #6E6F73)" id="Vector_12" />
+              <path d={svgPaths.p36c5cf70} fill="var(--fill-0, #6E6F73)" id="Vector_13" />
+              <path d={svgPaths.p17b58500} fill="var(--fill-0, #6E6F73)" id="Vector_14" />
+              <path d={svgPaths.p1aaa6200} fill="var(--fill-0, #6E6F73)" id="Vector_15" />
+              <path d={svgPaths.p3a09f400} fill="var(--fill-0, #6E6F73)" id="Vector_16" />
+              <path d={svgPaths.p2508c100} fill="var(--fill-0, #6E6F73)" id="Vector_17" />
+              <path d={svgPaths.p21a06500} fill="var(--fill-0, #6E6F73)" id="Vector_18" />
+              <path d={svgPaths.p373902f0} fill="var(--fill-0, #6E6F73)" id="Vector_19" />
+              <path d={svgPaths.p7f41f00} fill="var(--fill-0, #6E6F73)" id="Vector_20" />
+              <path d={svgPaths.p165b8100} fill="var(--fill-0, #6E6F73)" id="Vector_21" />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+function TuntunFirstCoverVisual() {
+  return (
+    <>
+      <img
+        alt=""
+        className="-translate-x-1/2 -translate-y-1/2 absolute h-[112%] left-1/2 max-w-none object-cover pointer-events-none top-1/2 w-[112%]"
+        src={imgTuntunBackground}
+      />
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute aspect-[1470/3000] h-[82%] left-1/2 top-1/2">
+        <img
+          alt=""
+          className="block h-full max-w-none object-contain pointer-events-none w-full"
+          src={imgTuntunPhoneMockup}
+        />
+      </div>
+    </>
+  );
+}
+
 function CoverSection() {
   return (
     <div className="bg-white overflow-hidden relative rounded-[4px] shrink-0 w-full">
-      <div className="aspect-[3100/2040] bg-white overflow-hidden relative w-full">
-        <img alt="tuntun onboarding cover visual" className="absolute inset-0 object-cover object-center pointer-events-none size-full" src={imgCover} />
+      <div className="bg-white h-[360px] overflow-hidden relative w-full sm:h-[510px]">
+        <TuntunFirstCoverVisual />
       </div>
-      <div className="aspect-[1552/204] bg-white relative w-full">
-        <div className="absolute left-[6.9%] top-1/2 -translate-y-1/2">
-          <p className="font-['Outfit:Regular',sans-serif] font-bold leading-[0.86] text-[#6e6f73] text-[18px]">Tuntun</p>
-          <p className="font-['Outfit:Regular',sans-serif] font-semibold leading-[1] text-[#6e6f73] text-[8px]">Sekuritas Indonesia</p>
-        </div>
-        <div className="absolute left-[23.2%] right-[7.2%] top-[23.5%]">
-          <p className="font-['Outfit:Regular',sans-serif] font-normal leading-[1] lowercase text-[15px] text-black">good spirit from the east</p>
-          <p className="font-['Outfit:Regular',sans-serif] font-normal leading-[1.35] lowercase mt-[13px] text-[#6e6f73] text-[15px]">
-            launched a guided investment experience for novice users by simplifying the complex investment journey
-          </p>
+      <div className="bg-white relative shrink-0 w-full">
+        <div className="flex flex-row items-center size-full">
+          <div className="content-stretch flex gap-[20px] items-center p-[20px] relative w-full">
+            <TuntunLogo />
+            <div className="content-stretch flex flex-[1_0_0] flex-col font-['Outfit:Regular',sans-serif] font-normal gap-[8px] items-start leading-[normal] lowercase min-h-px min-w-px relative text-[14px]">
+              <p className="relative shrink-0 text-black whitespace-nowrap">{`Good spirit from the east `}</p>
+              <p className="min-w-full relative shrink-0 text-[#6e6f73] w-[min-content]">Launched a guided investment experience for novice users by simplifying the complex investment journey</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -164,10 +221,10 @@ function ProcessAsset({ alt, headerAlt, headerSrc, src }: { alt: string; headerA
 
 function ProcessSection() {
   return (
-    <div className="bg-white p-[20px] relative rounded-[4px] shrink-0 w-full">
+    <div className="bg-white p-[16px] relative rounded-[4px] shrink-0 w-full sm:p-[20px]">
       <div className="content-stretch flex flex-col gap-[20px] items-start relative w-full">
         <SectionTitle title="process" subtitle="to find the true problems felt by users" />
-        <div className="grid grid-cols-2 gap-[20px] relative w-full">
+        <div className="grid grid-cols-1 gap-[20px] relative w-full sm:grid-cols-2">
           <ProcessAsset alt="stakeholder insight comparison" headerAlt="gathering insight from stakeholders" headerSrc={imgProcessStakeholdersHeader} src={imgProcessStakeholders} />
           <ProcessAsset alt="market positioning map" headerAlt="product positioning in market" headerSrc={imgProcessPositioningHeader} src={imgProcessPositioning} />
           <ProcessAsset alt="synthesis findings sticky notes" headerAlt="syntesis all findings" headerSrc={imgProcessSynthesisHeader} src={imgProcessSynthesis} />
@@ -180,10 +237,11 @@ function ProcessSection() {
 
 function OpportunitySection() {
   return (
-    <div className="bg-white p-[20px] relative rounded-[4px] shrink-0 w-full">
+    <div className="bg-white p-[16px] relative rounded-[4px] shrink-0 w-full sm:p-[20px]">
       <div className="content-stretch flex flex-col gap-[28px] items-start relative w-full">
         <SectionTitle title="opportunity" subtitle="what if the journey could begin here?" />
-        <AssetImage alt="tuntun opportunity journey flow" className="aspect-[2945/1400]" src={imgOpportunityFlow} />
+        <AssetImage alt="tuntun opportunity journey flow" className="aspect-square lg:hidden" src={imgOpportunityFlowMobile} />
+        <AssetImage alt="tuntun opportunity journey flow" className="hidden aspect-[2945/1400] lg:block" src={imgOpportunityFlow} />
       </div>
     </div>
   );
@@ -196,7 +254,7 @@ function NumberedAsset({ alt, index, src, title }: { alt: string; index: string;
         <div className="bg-[#f7f7f7] content-stretch flex items-center justify-center rounded-full size-[32px]">
           <p className="font-['Outfit:Regular',sans-serif] font-normal text-[14px] text-black">{index}</p>
         </div>
-        <p className="font-['Outfit:Regular',sans-serif] font-normal leading-[normal] text-[14px] text-black">{title}</p>
+        <p className="font-['Outfit:Regular',sans-serif] font-normal leading-[18px] text-[14px] text-black">{title}</p>
       </div>
       <AssetImage alt={alt} className="aspect-square" src={src} />
     </div>
@@ -205,10 +263,10 @@ function NumberedAsset({ alt, index, src, title }: { alt: string; index: string;
 
 function OutputSection() {
   return (
-    <div className="bg-white p-[20px] relative rounded-[4px] shrink-0 w-full">
+    <div className="bg-white p-[16px] relative rounded-[4px] shrink-0 w-full sm:p-[20px]">
       <div className="content-stretch flex flex-col gap-[20px] items-start relative w-full">
         <SectionTitle title="output" subtitle="idea to solve user problem" />
-        <div className="grid grid-cols-2 gap-[20px] relative w-full">
+        <div className="grid grid-cols-1 gap-[20px] relative w-full sm:grid-cols-2">
           <NumberedAsset alt="seamless registration KTP capture" index="01" src={imgOutputRegistration} title="seamless registration for user acquisition" />
           <NumberedAsset alt="tuntun AI guidance screen" index="02" src={imgOutputAi} title="ai guidance for help user learn" />
           <NumberedAsset alt="market exploration screen" index="03" src={imgOutputExploration} title="engaging exploration to find opportunities" />
@@ -221,10 +279,10 @@ function OutputSection() {
 
 function ImpactSection() {
   return (
-    <div className="bg-white p-[20px] relative rounded-[4px] shrink-0 w-full">
+    <div className="bg-white p-[16px] relative rounded-[4px] shrink-0 w-full sm:p-[20px]">
       <div className="content-stretch flex flex-col gap-[28px] items-start relative w-full">
         <SectionTitle title="impact" subtitle="successful conversion of 126,606 users after release" />
-        <div className="grid grid-cols-2 gap-[20px] relative w-full">
+        <div className="grid grid-cols-1 gap-[20px] relative w-full sm:grid-cols-2">
           <AssetImage alt="app store and play store download metric" className="aspect-square" src={imgImpactDownload} />
           <AssetImage alt="account opening drop-off metric" className="aspect-square" src={imgImpactDropoff} />
           <AssetImage alt="converted transaction metric" className="aspect-square" src={imgImpactTransaction} />
@@ -238,23 +296,33 @@ function ImpactSection() {
 function Navbar() {
   return (
     <div className="flex-[1_0_0] min-w-px relative overflow-y-auto overflow-x-hidden h-full" data-name="navbar">
-      <div className="content-stretch flex flex-col gap-[20px] items-start py-[20px] relative rounded-[inherit] w-full">
+      <div className="content-stretch flex flex-col gap-[12px] items-start py-[12px] relative rounded-[inherit] w-full sm:gap-[20px] sm:py-[20px]">
         <CoverSection />
         <ProcessSection />
         <OpportunitySection />
         <OutputSection />
         <ImpactSection />
-        <div aria-hidden="true" className="absolute border-[#e0e0e0] border-dashed border-l-2 border-r-2 inset-[0_-1px] pointer-events-none" />
+        <div aria-hidden="true" className="absolute border-[#e0e0e0] border-dashed border-l-2 border-r-2 inset-[0_-1px] pointer-events-none max-lg:hidden" />
       </div>
+    </div>
+  );
+}
+
+function MobileTopBar({ onBack }: TuntunDetailProps) {
+  return (
+    <div className="bg-[#fafafa]/95 border-[#e0e0e0] border-b border-dashed flex items-center justify-between px-[16px] py-[14px] sticky top-0 z-20 lg:hidden">
+      <Sheet onBack={onBack} />
+      <p className="font-['Outfit:Regular',sans-serif] font-normal lowercase text-[#6e6f73] text-[13px] whitespace-nowrap">3 min read</p>
     </div>
   );
 }
 
 export default function TuntunDetail({ onBack }: TuntunDetailProps) {
   return (
-    <div className="bg-[#fafafa] content-stretch flex gap-[20px] items-start justify-center px-[200px] relative size-full" data-name="personal website detail">
+    <div className="bg-[#fafafa] content-stretch flex flex-col gap-0 items-stretch justify-start px-[12px] relative size-full sm:px-[20px] lg:flex-row lg:gap-[20px] lg:items-start lg:justify-center lg:px-[200px]" data-name="personal website detail">
+      <MobileTopBar onBack={onBack} />
       <Sidebar onBack={onBack} />
-      <div className="content-stretch flex h-full items-start relative shrink-0 w-[775px]">
+      <div className="content-stretch flex flex-1 min-h-0 items-start relative shrink-0 w-full lg:h-full lg:w-[775px]">
         <Navbar />
       </div>
     </div>
