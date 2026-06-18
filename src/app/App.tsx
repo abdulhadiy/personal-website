@@ -780,7 +780,7 @@ export default function App() {
     if (showDetailPage) return;
     if (!containerRef.current) return;
 
-    const bibitStockMailto = "mailto:abdulhadiy8@gmail.com?subject=Hi%20Abdul&body=Halo%20saya%20ingin%20tanya%20tentang%20project%20bibit%2B";
+    const bibitStockMailto = "mailto:abdulhadiy8@gmail.com?subject=Hi%20Abdul&body=Hi%20Abdul%2C%0A%0AI%20just%20wanted%20to%20ask%20about%20the%20Bibit%2B%20project";
 
     const projectTexts = [
       "view summary",      // Bibit - Revamp Transaction Page

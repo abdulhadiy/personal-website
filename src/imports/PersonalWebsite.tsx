@@ -29,7 +29,7 @@ import imgScreenshot20260305At905043 from "figma:asset/7b872ff2c435495300035d55d
 import imgIphone17ProMaxMockup17725952114972 from "figma:asset/1b5c8f8a32b48dfa0f1bc0089b0e0478ca1e3539.png";
 import imgBibit5 from "figma:asset/cfe4620fe8ecc3f59644c0d3a7e6ba2fa6d7ead2.png";
 
-const connectMailto = "mailto:abdulhadiy8@gmail.com?subject=Hi%20Abdul&body=Halo%20Abdul%2C%0A%0ASaya%20ingin%20tanya%2C%20apakah%20ada%20kemungkinan%20untuk%20bekerja%20sama%3F%0A%0ASaya%20tertarik%20untuk%20ngobrol%20lebih%20lanjut%20kalau%20memang%20ada%20peluang%20kolaborasi.%0A%0ATerima%20kasih%20sebelumnya%2C%20ditunggu%20kabarnya%20ya.%0A%0ASalam%2C%0A%5BNama%20Anda%5D";
+const connectMailto = "mailto:abdulhadiy8@gmail.com?subject=Hi%20Abdul&body=Hi%20Abdul%2C%0A%0AI%20just%20wanted%20to%20ask%20if%20there%20might%20be%20an%20opportunity%20to%20collaborate.%0A%0AI%E2%80%99d%20be%20happy%20to%20chat%20further%20if%20there%E2%80%99s%20a%20potential%20for%20working%20together.%0A%0AThanks%20in%20advance%2C%20and%20looking%20forward%20to%20hearing%20from%20you.%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D";
 import imgImage11 from "figma:asset/e316a02a9d243f87b7a0259a5f409b273a6c5b07.png";
 import imgImage12 from "figma:asset/c98b7cf078c12a150b90710e2a716c7cfd325057.png";
 import imgImage3 from "figma:asset/684bd852a3d922676113508ab49903ccd4c61f99.png";
